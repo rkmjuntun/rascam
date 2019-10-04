@@ -916,6 +916,7 @@ unsafe extern "C" fn camera_buffer_callback(
     } else {
         #[cfg(feature = "debug")]
         println!("Received a camera still buffer callback with no state");
+		ffi::mmal_buffer_header_release(buffer);
     }
 }
 
